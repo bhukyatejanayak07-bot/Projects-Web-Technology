@@ -3,7 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Document</title><style>
+        .h1{
+            background-color: aliceblue;
+            text-align: center;
+
+        }
+        div1{
+            color: rgb(235, 96, 4);
+        }
+        body{
+            background-color: yellow;
+            color: blue;
+            /* justify-content: center; */
+            align-items: center;
+        }
+        button{
+            background-color: pink;
+           color:1px solid black;
+          
+        }
+        button:hover{
+            background-color: red;
+          transform: translateY(100px);
+          transition: 1ms;
+          transform: scale(1.5);
+        }
+      h2{
+        font-size: 50px;
+        text-align: center;
+      
+        
+      }
+      h2:hover{
+        transform: scale(1.3);
+      }
+      select{
+        text-align: center;
+        
+       
+      }
+      .box{
+        color: white;
+        background-color: skyblue;
+        height: 330px;
+        width: 330px;
+     text-align: center;
+     border: 2px solid black;
+     border-radius: 35px;
+     margin: 12px;
+     box-sizing: content-box;
+     flex-wrap: wrap;
+     justify-content: center;
+     box-shadow: 4px 4px 8px black;
+     align-items: center;
+   
+     
+      }
+      #hero{
+        display: none;
+      }
+      .container{
+background-color: aqua;
+color:rgb(232, 6, 6);
+display: grid;
+/* grid-template-columns: 100px 100px 100px ; */
+grid-template-columns: 1fr 1fr 1fr;
+grid-template-columns: repeat(4,150px);
+border-color: 1px solid black;
+box-shadow: 4px 4px 8px  black;
+height: auto;
+width: auto;
+gap:20px;
+font-size: 60px;
+      }
+      
+    </style>
 </head>
 <body>
     <input placeholder="Enter your Name" type="Name"><br>
@@ -19,6 +94,35 @@
     <source controls autoplay loop src="" type="" >
 </audio>
 <img src="" height="" width="">
+<h1>Hero</h1>
+<div id="hero">
+    <h2>Yes I'm a hero!!!</h2>
+</div>
+<div1 id="req">
+    <h2 id="shop">Amazon</h2>
+    <h1>Yes boss!!</h1>
+    <p class="abc">Paragraph</p>
+
+</div1>
+<button>enter</button>
+<div class="box">
+    <p>hello guy's</p>
+    <h1>Books!!</h1>
+    
+</div>
+<div class="box">
+    <p>Yhaa broo</p>
+    <h1>please</h1>
+</div>
+<div class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>
+        4
+    </div>
+    <div>5</div>
+</div>
     
 </body>
 </html>
