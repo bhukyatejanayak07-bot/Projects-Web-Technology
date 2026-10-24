@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Report</title>
+    <link rel="stylesheet" href="movie.css">
+</head>
+
+<body>
+    <div id="main">
+      <h1>Movies 📽⋆˚࿔</h1>
+<input type="text" id="movie" placeholder="eg.Baahubali"/>
+<button onclick="getmovie()">search</button><br/>
+<div id="result">search valid Movie</div><br><br/>
+    </div>
+    
+    <script >
+
+    
+ async function getmovie(){
+    try{
+    const movie=document.getElementById("movie").value;
+
+   // const Apikey="1dfe32a5475cd06c22e321e14824a6d0";
+   const Apikey="88940ac2"
+
+    const ApiUrl=`http://www.omdbapi.com/?t=${movie}&apikey=${Apikey}`;
+
+    const response= await fetch(ApiUrl)
+        console.log(response)
+if(!response.ok){
+   throw new Error("Search Valid movie name")
+}
+const data= await response.json()
+if(data.response=="False"){
+    document.getElementById("result").innerHTML=
+    `<h2>${data.Error}</h2>
+    `;
+    return;
+}
+
+    document.getElementById("result").innerHTML=`
+
+    <h3>${data.Title}</h3>
+        <div id="card">
+           <img src="${data.Poster}" alt="movie poster" height="250" width="250"><br/>
+            <h2> <strong>${data.Title}</strong></h2>
+            <h2>Year : <strong>${data.Year}</strong></h2>
+         <h1>imdbRating : <strong>${data.imdbRating}</strong></h1>
+             <h4>Released : <strong>${data.Released}</strong></h4>
+             <h4>Runtime : <strong>${data.Runtime}</strong></h4>
+             <h4>Director : <strong>${data.Director}</strong></h4>
+             <h4>Writer : <strong>${data.Writer}</strong></h4>
+             <h4>Actors : <strong>${data.Actors}</strong></h4>
+             <h4>Language : <strong>${data.Language}</strong></h4>
+            
+             <h3>Country : <strong>${data.Country}</strong></h3>
+
+            </div>
+    `;
+
+    }
+catch(error){
+    console.log("error",error)
+    document.getElementById("result").innerHTML=`
+    <h2>${error.message}</h2>`;
+}
+
+}
+    </script>
+    
+    
+</body>
+</html>
