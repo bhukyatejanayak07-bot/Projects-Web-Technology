@@ -29,11 +29,7 @@ const userschema =new mongoose.Schema({
 
 // model- ini which model have to stores this all data
 
-const user=mongoose.model('user',userschema)
-
-
-
-
+const User=mongoose.model('User',userschema)
 
 // frontend-backend-api- carring data
 app.get('/',(req,res)=>
@@ -44,12 +40,12 @@ app.get('/',(req,res)=>
 app.post('/register',async(req,res)=>{
   const{username,email,password}  =req.body
   if(!email||!username||!password){
-    res.json({message:'All field must be complete'})
+    return res.json({message:'All field must be complete'})
   }
 
 
 //check that exist or not
-const Exesting= await user.findOne({email})
+const Exesting= await User.findOne({email})
 
 if(Exesting){
     return res.json({message:'user already exist'})
@@ -61,26 +57,25 @@ const hashpassword=await bcrypt.hash(password,10)
 
 
 // save the data in mangoDB
-const NewUser=new user({
+const NewUser=new User({
     username,
     email,
     password:hashpassword
 })
 await NewUser.save()
 
-res.json({Message:'Register Succesfully'})
-
+res.json({ message:'Register Successfully'})
 })
 // login 
 app.post('/login',async(req,res)=>{
     const{email,password}=req.body;
     //find the user
 
-    const user=await user.findOne({email})
-    if(!user){
+    const foundUser=await user.findOne({email})
+    if(!foundUser){
         return res.json({message:'User Not Found- Register First'})
     }
-    const valid= await bcrypt.compare(password,password.user)
+    const valid= await bcrypt.compare(password,foundUser.user)
     if(valid){
         res.json({message:'Login Succesfully'})
     }
