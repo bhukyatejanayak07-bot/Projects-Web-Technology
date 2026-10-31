@@ -9,16 +9,21 @@
         font-family: Arial, Helvetica, sans-serif;
         padding: 20px;
         background-color: #c421d0;
+        align-items: center;
+        justify-content: center;
 
        }
 
        .container{
+        color: solid rgb(0, 0, 0);
+        text-align: center;
         background: white;
         padding: 20px;
         max-width: 400px;
         margin: auto;
         border-radius: 10px;
-        background-color: magenta;
+        background-color: magenta; 
+        box-shadow: 1px    0px    18px     black;
        }
 
        input{
@@ -38,8 +43,10 @@
         border-radius: 50px;
         justify-content: space-between;
         align-items: center;
+        margin: 20px;
        
        }
+       
     </style>
 </head>
 <body>
@@ -52,6 +59,7 @@
            <input type="email" id="email" placeholder="Email" required>
 
            <input type="password" id="password" placeholder="password" required>
+           <button onclick="ShowPassword()">show</button>
 
            <button onclick="register()">Register</button>
            
@@ -61,6 +69,15 @@
     </div>
 
     <script>
+        function ShowPassword(){
+            let password=document.getElementById("password")
+            if (password=="password"){
+                password.type="text";
+            }
+            else{
+                pass.type="password";
+            }
+        }
          async function register() {
                   
             const username = document.getElementById("name").value
