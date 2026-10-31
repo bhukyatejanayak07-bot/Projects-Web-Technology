@@ -1,16 +1,36 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# To-Do App
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 1. Project Overview
+A responsive To-Do application built with React.js that helps users organise their daily tasks. It was developed as part of the Web Development Week 04 Mini Project. The user interface was designed mainly using Figma, with a focus on a clean, aesthetic and user-friendly layout.
 
-## React Compiler
+## 2. Features Implemented
+- Add new tasks
+- Mark tasks as completed
+- Delete tasks
+- Edit existing tasks
+- Display task status (Completed / Pending)
+- Task filtering (All, Completed, Pending)
+- Add due dates to tasks
+- Local storage to retain tasks after page refresh
+- Responsive design for mobile and desktop
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 3. Technologies Used
+- Figma (main tool used for UI/UX design)
+- React.js (Vite)
+- JavaScript (ES6+)
+- HTML5 and CSS3
+- Browser localStorage
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 4. Setup Instructions
+1. Clone the repository:
+   `git clone <[your-repo-link](https://github.com/bhukyatejanayak07-bot/Projects-Web-Technology
+)>`
+2. Go to the project folder:
+   `cd to-do-app`
+3. Install dependencies:
+   `npm install`
+4. Start the development server:
+   `npm run dev`
+5. Open the local link shown in the terminal (usually http://localhost:5173).
